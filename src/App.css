@@ -419,35 +419,40 @@ button:active {
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 2rem 0;
-  margin-bottom: 3rem;
+  padding: 3rem 0;
+  margin-bottom: 4rem;
+  background: linear-gradient(to bottom, rgba(18, 18, 18, 0.8), rgba(26, 26, 26, 0.6));
+  border-radius: 12px;
 }
 
 .hero-content {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
   animation: fadeIn 0.8s ease-out;
+  padding: 0 2rem;
 }
 
 .profile-image {
   flex: 1;
   max-width: 300px;
   animation: float 6s ease-in-out infinite;
+  border-radius: 50%;
+  border: 4px solid var(--primary-accent);
+  box-shadow: 0 0 25px rgba(100, 181, 246, 0.4);
+  overflow: hidden;
 }
 
 .profile-image img {
   width: 100%;
-  border-radius: 50%;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 2px solid var(--card-border);
+  height: auto;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  filter: brightness(1.05) contrast(1.05);
 }
 
-.profile-image img:hover {
+.profile-image:hover img {
   transform: scale(1.03);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
-  border-color: var(--primary-accent);
+  filter: brightness(1.1) contrast(1.1);
 }
 
 .hero-text {
@@ -456,9 +461,10 @@ button:active {
 }
 
 .hero-text h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 0.5rem;
-  animation: slideIn 0.6s ease-out;
+  font-weight: 700;
+  letter-spacing: 1px;
   background: linear-gradient(45deg, var(--primary-accent), var(--secondary-accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -469,24 +475,178 @@ button:active {
 .hero-text h2 {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
-  opacity: 0;
-  animation: fadeIn 0.6s ease-out 0.2s forwards;
   color: var(--text-light);
 }
 
-.hero-text p {
-  margin-bottom: 2rem;
+.hero-text .intro {
+  font-size: 1.2rem;
   line-height: 1.8;
-  opacity: 0;
-  animation: fadeIn 0.6s ease-out 0.4s forwards;
+  margin-bottom: 2rem;
+  color: var(--text-muted);
+  max-width: 90%;
+}
+
+.about-card {
+  padding: 2rem;
+}
+
+.about-intro {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+}
+
+.professional-summary {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
   color: var(--text-muted);
 }
 
-.cta-buttons {
+.key-skills h3 {
+  margin-bottom: 1rem;
+  color: var(--primary-accent);
+  font-weight: 600;
+}
+
+.skill-list {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
-  opacity: 0;
-  animation: fadeIn 0.6s ease-out 0.6s forwards;
+  list-style: none;
+  padding: 0;
+}
+
+.skill-list li {
+  background-color: rgba(100, 181, 246, 0.1);
+  border: 1px solid rgba(100, 181, 246, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.skill-list li:hover {
+  background-color: rgba(100, 181, 246, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.skill-highlight {
+  display: block;
+  text-align: center;
+  font-weight: 500;
+}
+
+.highlights {
+  margin-bottom: 4rem;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.highlight-card {
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.highlight-card:hover {
+  transform: translateY(-10px);
+}
+
+.highlight-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.highlight-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-accent);
+}
+
+.highlight-card p {
+  margin-bottom: 0.5rem;
+  color: var(--text-muted);
+}
+
+.highlight-link {
+  margin-top: auto;
+  padding-top: 1rem;
+  color: var(--primary-accent);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.highlight-link:hover {
+  color: var(--secondary-accent);
+  text-decoration: underline;
+}
+
+.contact-cta {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.cta-content {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: linear-gradient(to right, rgba(18, 18, 18, 0.9), rgba(45, 45, 45, 0.9));
+  border: 1px solid var(--primary-accent);
+}
+
+.cta-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-accent);
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .profile-image {
+    margin: 0 auto;
+    max-width: 220px;
+  }
+  
+  .hero-text .intro {
+    max-width: 100%;
+  }
+  
+  .cta-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .skill-list {
+    justify-content: center;
+  }
+  
+  .highlights-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
 
 /* Projects styling */
