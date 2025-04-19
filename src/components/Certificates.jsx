@@ -2,31 +2,39 @@ import React from 'react';
 import AnimatedElement from './AnimatedElement';
 
 function Certificates() {
-  // Sample certificates - replace with actual data
+  // Updated certificates data
   const certificates = [
     {
       id: 1,
-      title: 'Digital Marketing Fundamentals',
-      issuer: 'TeamQuest Consultants',
-      date: 'August 2024',
-      image: '../assets/certificates/digital-marketing-cert.jpg',
-      description: 'Completed comprehensive training in digital marketing fundamentals',
+      title: 'Macroeconomics for Business Management',
+      issuer: 'FIA Business School',
+      date: 'March 2023',
+      image: null,
+      description: 'Comprehensive certification covering core concepts of digital marketing including search, social media, and content marketing.',
     },
     {
       id: 2,
-      title: 'Business Technology Integration',
-      issuer: 'Mahindra University',
-      date: 'December 2023',
-      image: '../assets/certificates/business-tech-cert.jpg',
-      description: 'Certification in business technology integration practices',
+      title: 'Business Case Development',
+      issuer: 'Harvard Manage Mentor',
+      date: 'Feb 2025',
+      image: null,
+      description: 'In-depth course on developing effective business strategies, market analysis, and competitive positioning.',
     },
     {
       id: 3,
-      title: 'Financial Markets Foundation',
-      issuer: 'Online Learning Platform',
-      date: 'June 2023',
-      image: '../assets/certificates/finance-cert.jpg',
-      description: 'Understanding of equity markets and financial instruments',
+      title: 'Crash course on Python',
+      issuer: 'Google',
+      date: 'Aug 2020',
+      image: null,
+      description: 'This course provided a strong foundation in Python programming, covering essential topics such as variables, loops, conditionals, functions, and error handling. It also included practical exercises to build real-world skills in writing Python scripts and automating tasks.',
+    },
+    {
+      id: 4,
+      title: 'Writing and Editing: Structure and Organization',
+      issuer: 'University of Michigan',
+      date: 'April 2020',
+      image: null,
+      description: 'The certificate verifies a strong foundation in professional writing techniques, editorial standards, and content clarity—skills applicable across academic, creative, and workplace communications.',
     }
   ];
 
@@ -43,19 +51,27 @@ function Certificates() {
               key={certificate.id} 
               animation="fade-in" 
               delay={index * 150} 
-              className="certificate-card card"
+              className="certificate-card card professional-cert-card"
             >
               <h3 className="card-title">{certificate.title}</h3>
               <div className="card-content">
-                <div className="certificate-image">
+                <div className="certificate-image" style={{ border: '1px solid var(--card-border)', borderRadius: '6px' }}>
                   {/* Always use placeholder image since actual images don't exist */}
                   <img 
                     src={`https://via.placeholder.com/300x200?text=${certificate.title.replace(/\s+/g, '+')}`} 
                     alt={certificate.title} 
+                    style={{ display: 'block', width: '100%', height: 'auto' }}
                   />
                 </div>
-                <div className="certificate-details">
-                  <div className="certificate-meta">
+                <div className="certificate-details" style={{ padding: '10px 5px' }}>
+                  <div className="certificate-meta" style={{ 
+                    display: 'flex', 
+                    justifyContent: 'space-between',
+                    backgroundColor: 'rgba(72, 166, 167, 0.05)',
+                    padding: '8px 12px',
+                    borderRadius: '4px',
+                    marginBottom: '12px'
+                  }}>
                     <p className="certificate-issuer"><strong>Issuer:</strong> {certificate.issuer}</p>
                     <p className="certificate-date"><strong>Date:</strong> {certificate.date}</p>
                   </div>

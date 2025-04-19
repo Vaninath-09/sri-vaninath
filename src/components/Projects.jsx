@@ -2,31 +2,43 @@ import React from 'react';
 import AnimatedElement from './AnimatedElement';
 
 function Projects() {
-  // Sample projects data - replace with actual data
+  // Project data
   const projects = [
     {
       id: 1,
-      title: 'Real Estate Marketing Campaign',
-      category: 'Digital Marketing',
-      duration: '2023 - Present',
-      description: 'Developed and implemented marketing strategies for family-owned real estate projects, using digital tools and local platforms.',
-      technologies: ['WhatsApp Marketing', 'Local SEO', 'Content Creation'],
+      title: "Comparative Analysis of Fiscal, Monetary, and Trade Policies in the Horticulture Sector",
+      category: "Economic Research",
+      duration: "2023",
+      description: "Conducted a comprehensive analysis comparing the influence of fiscal, monetary, and trade policies on the horticulture sectors in Brazil and China, providing insights into economic policy impacts.",
+      technologies: ["Economic Analysis", "Policy Research", "International Trade"],
+      file: "././assets/Comparative Analysis of Fiscal, Monetary, and Trade Policies in the Horticulture Sector.pdf"
     },
     {
       id: 2,
-      title: 'Construction Project Management',
-      category: 'Field Operations',
-      duration: '2022 - 2023',
-      description: 'Assisted in on-site supervision, vendor coordination, and client handling for construction projects.',
-      technologies: ['Vendor Management', 'Client Relations', 'Quality Control'],
+      title: "Amazon Sales Report - Predicting Cancellations",
+      category: "Data Analytics",
+      duration: "2022 - 2023",
+      description: "Developed a predictive model to identify high-risk order cancellations for Amazon sales, enabling proactive pricing strategies and improved revenue management.",
+      technologies: ["Data Analysis", "Predictive Modeling", "E-commerce Strategy"],
+      file: "././assets/mareketing_anayatis_final project_ 000.pdf"
     },
     {
       id: 3,
-      title: 'Digital Marketing Analysis',
-      category: 'Analytics',
-      duration: 'June - August 2024',
-      description: 'Created analytical reports and insights during internship with TeamQuest Consultants.',
-      technologies: ['Marketing Analytics', 'Data Visualization', 'Performance Metrics'],
+      title: "IOT-Based Seizure Detection and Response Wearable",
+      category: "Healthcare Technology",
+      duration: "2022",
+      description: "Engineered a wearable device that monitors and tracks seizure patterns in epilepsy patients, providing critical data for healthcare providers to optimize treatment plans and improve patient outcomes.",
+      technologies: ["IoT Development", "Health Monitoring", "Embedded Systems"],
+      file: "././assets/Team connectivity_final presentation.pptx"
+    },
+    {
+      id: 4,
+      title: "E-Commerce Transformation for Home-Based Bakery",
+      category: "Digital Transformation",
+      duration: "2021 - 2022",
+      description: "Transformed a home-based bakery business from manual Instagram/WhatsApp operations to a full e-commerce platform, streamlining the ordering process and enabling business scaling.",
+      technologies: ["E-commerce Development", "UX Design", "Digital Marketing"],
+      file: "././assets/Project Background.pdf"
     }
   ];
 

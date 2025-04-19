@@ -1,0 +1,66 @@
+/* Professional Certificate Card Styling */
+.professional-cert-card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(to bottom, #ffffff, #fafafa);
+  overflow: hidden;
+}
+
+.professional-cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.professional-cert-card .card-title {
+  padding: 16px 20px;
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 1px solid #eaeaea;
+  background-color: #f9f9f9;
+}
+
+.professional-cert-card .card-content {
+  padding: 20px;
+}
+
+.professional-cert-card .certificate-image {
+  margin-bottom: 18px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.professional-cert-card .certificate-image img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.professional-cert-card:hover .certificate-image img {
+  transform: scale(1.03);
+}
+
+.professional-cert-card .certificate-details {
+  padding: 5px 0;
+}
+
+.professional-cert-card .certificate-meta {
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.professional-cert-card .certificate-issuer,
+.professional-cert-card .certificate-date {
+  margin: 6px 0;
+}
+
+.professional-cert-card .certificate-desc {
+  color: #555;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
