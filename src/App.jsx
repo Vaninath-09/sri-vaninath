@@ -8,6 +8,7 @@ import Resume from './components/Resume'
 import Certificates from './components/Certificates'
 import Projects from './components/Projects'
 import Extracurricular from './components/Extracurricular'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   const [activeNav, setActiveNav] = useState('home')
@@ -70,6 +71,7 @@ function App() {
 
   return (
     <div className="portfolio">
+      <ScrollToTop />
       <header className={`main-header ${headerClass}`}>
         <div className="header-container">
           <div className="logo">
