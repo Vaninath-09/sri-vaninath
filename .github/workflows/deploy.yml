@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          persist-credentials: false
         
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -23,6 +25,59 @@ jobs:
         
       - name: Build
         run: npm run build
+        env:
+          NODE_ENV: production
+          BASE_URL: '/sri-vaninath'
+        
+      - name: Prepare for GitHub Pages
+        run: |
+          # Create proper 404.html that redirects to index.html with correct path
+          cat > dist/404.html << 'EOF'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Page Not Found | V Sri Vaninath Portfolio</title>
+            <script>
+              sessionStorage.setItem('redirect', window.location.pathname);
+              window.location.href = '/sri-vaninath/';
+            </script>
+            <style>
+              body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                text-align: center;
+                padding: 2rem;
+                max-width: 600px;
+                margin: 0 auto;
+              }
+              .spinner {
+                width: 40px;
+                height: 40px;
+                margin: 2rem auto;
+                border: 4px solid rgba(72, 166, 167, 0.1);
+                border-radius: 50%;
+                border-top-color: #48A6A7;
+                animation: spin 1s linear infinite;
+              }
+              @keyframes spin {
+                to { transform: rotate(360deg); }
+              }
+            </style>
+          </head>
+          <body>
+            <h1>Redirecting...</h1>
+            <div class="spinner"></div>
+            <p>If you are not redirected automatically, <a href="/sri-vaninath/">click here</a>.</p>
+          </body>
+          </html>
+          EOF
+          
+          # Create a .nojekyll file to prevent GitHub Pages from using Jekyll
+          touch dist/.nojekyll
+          
+          # Ensure index.html is at the root of the sri-vaninath folder (for GitHub Pages)
+          cp dist/index.html dist/200.html
         
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
@@ -30,3 +85,7 @@ jobs:
           folder: dist # The folder the action should deploy
           branch: gh-pages # The branch the action should deploy to
           token: ${{ secrets.GH_TOKEN }}
+          clean: true
+          silent: false
+          commit-message: "Deploy website [skip ci]"
+          single-commit: true

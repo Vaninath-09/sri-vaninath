@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | V Sri Vaninath Portfolio</title>
+  <script>
+    // Single Page App redirection script for GitHub Pages
+    // This script takes into account the repository name in the URL path
+    (function() {
+      const repo = 'sri-vaninath';
+      const segments = window.location.pathname.split('/');
+      const isGitHubPages = window.location.hostname.includes('github.io');
+      
+      // Check for known missing pages
+      const path = window.location.pathname;
+      if (path.includes('/contact')) {
+        // Redirect to homepage if trying to access non-existent contact page
+        const homeUrl = window.location.origin + (isGitHubPages ? '/' + repo : '');
+        window.location.replace(homeUrl);
+        return;
+      }
+      
+      // Remove the repo name from the pathname if we're on GitHub Pages
+      let pathname = window.location.pathname;
+      if (isGitHubPages && segments.length > 1 && segments[1] === repo) {
+        pathname = '/' + segments.slice(2).join('/');
+      }
+
+      // Redirect to the index.html with appropriate path
+      const redirectUrl = window.location.origin + 
+        (isGitHubPages ? '/' + repo : '') + 
+        '/#' + pathname + 
+        window.location.search;
+      
+      window.location.replace(redirectUrl);
+    })();
+  </script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100vh;
+    }
+    h1 { color: #48A6A7; }
+    p { line-height: 1.6; }
+    .loading { margin-top: 20px; }
+    .spinner {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(72, 166, 167, 0.3);
+      border-radius: 50%;
+      border-top-color: #48A6A7;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Redirecting...</h1>
+  <p>You are being redirected to the requested page.</p>
+  <div class="loading">
+    <div class="spinner"></div>
+  </div>
+</body>
+</html>
