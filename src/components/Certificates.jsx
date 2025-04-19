@@ -31,43 +31,64 @@ function Certificates() {
   ];
 
   return (
-    <div className="certificates-container">
-      <h1 className="section-title">Certificates & Achievements</h1>
+    <div className="certificates-container section-padding">
+      <AnimatedElement animation="fade-in" className="section-header">
+        <h1 className="section-title">Certificates & Achievements</h1>
+      </AnimatedElement>
       
-      <AnimatedElement animation="fade-in">
+      <AnimatedElement animation="fade-in" delay={100}>
         <div className="certificates-grid">
           {certificates.map((certificate, index) => (
             <AnimatedElement 
               key={certificate.id} 
-              animation="scale-in" 
+              animation="fade-in" 
               delay={index * 150} 
               className="certificate-card card"
             >
-              <div className="certificate-image">
-                {/* Always use placeholder image since actual images don't exist */}
-                <img 
-                  src={`https://via.placeholder.com/300x200?text=${certificate.title.replace(/\s+/g, '+')}`} 
-                  alt={certificate.title} 
-                />
-              </div>
-              <div className="certificate-content">
-                <h3>{certificate.title}</h3>
-                <p className="certificate-issuer">{certificate.issuer}</p>
-                <p className="certificate-date">{certificate.date}</p>
-                <p className="certificate-desc">{certificate.description}</p>
+              <h3 className="card-title">{certificate.title}</h3>
+              <div className="card-content">
+                <div className="certificate-image">
+                  {/* Always use placeholder image since actual images don't exist */}
+                  <img 
+                    src={`https://via.placeholder.com/300x200?text=${certificate.title.replace(/\s+/g, '+')}`} 
+                    alt={certificate.title} 
+                  />
+                </div>
+                <div className="certificate-details">
+                  <div className="certificate-meta">
+                    <p className="certificate-issuer"><strong>Issuer:</strong> {certificate.issuer}</p>
+                    <p className="certificate-date"><strong>Date:</strong> {certificate.date}</p>
+                  </div>
+                  <p className="certificate-desc">{certificate.description}</p>
+                </div>
               </div>
             </AnimatedElement>
           ))}
         </div>
       </AnimatedElement>
       
-      <AnimatedElement animation="slide-in" delay={400} className="additional-info card">
-        <h2>Additional Training</h2>
-        <ul>
-          <li>Webinars and workshops on investing and equity markets</li>
-          <li>Field training in real estate and construction management</li>
-          <li>Digital tools and software proficiency training</li>
-        </ul>
+      <div className="section-divider"></div>
+      
+      <AnimatedElement animation="fade-in" delay={300} className="training-section">
+        <h2 className="section-subtitle">Additional Training</h2>
+        <div className="training-card card">
+          <div className="card-content">
+            <ul className="training-list">
+              <li>
+                <h3>Financial Markets</h3>
+                <p>Webinars and workshops on investing and equity markets</p>
+              </li>
+              <li>
+                <h3>Construction Management</h3>
+                <p>Field training in real estate and construction management</p>
+              </li>
+              <li>
+                <h3>Digital Tools Proficiency</h3>
+                <p>Digital tools and software proficiency training</p>
+              </li>
+            </ul>
+          </div>
+        </div>
       </AnimatedElement>
     </div>
   );

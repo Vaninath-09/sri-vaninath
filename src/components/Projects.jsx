@@ -33,13 +33,13 @@ function Projects() {
   return (
     <div className="projects-container">
       <h1 className="section-title">Projects & Ventures</h1>
-      
+      <br/>
       <AnimatedElement animation="slide-in">
         <div className="projects-grid">
           {projects.map((project, index) => (
             <AnimatedElement 
               key={project.id} 
-              className="project-card card" 
+              className="project-card card professional-project-layout" 
               animation="scale-in"
               delay={index * 100}
             >
@@ -69,20 +69,35 @@ function Projects() {
           ))}
         </div>
       </AnimatedElement>
-      
-      <AnimatedElement animation="fade-in" delay={300} className="other-projects card">
+      <br/>
+      <br/>
+      <AnimatedElement animation="fade-in" delay={300} className="other-projects card professional-ventures-card">
         <h2>Additional Ventures</h2>
-        <ul>
-          <li>
-            <strong>Financial Analysis Project:</strong> Tracking and analyzing equity market trends and investment opportunities.
-          </li>
-          <li>
-            <strong>Digital Accounting Implementation:</strong> Set up digital tools for expense tracking and billing for small projects.
-          </li>
-          <li>
-            <strong>Business Strategy Development:</strong> Created mini-strategies for promoting various business ventures.
-          </li>
-        </ul>
+        <div className="ventures-content">
+          <ul className="ventures-list">
+            <li className="venture-item">
+              <div className="venture-item-header">
+                <span className="venture-icon">📊</span>
+                <strong>Financial Analysis Project</strong>
+              </div>
+              <p className="venture-description">Tracking and analyzing equity market trends and investment opportunities.</p>
+            </li>
+            <li className="venture-item">
+              <div className="venture-item-header">
+                <span className="venture-icon">💼</span>
+                <strong>Digital Accounting Implementation</strong>
+              </div>
+              <p className="venture-description">Set up digital tools for expense tracking and billing for small projects.</p>
+            </li>
+            <li className="venture-item">
+              <div className="venture-item-header">
+                <span className="venture-icon">🚀</span>
+                <strong>Business Strategy Development</strong>
+              </div>
+              <p className="venture-description">Created mini-strategies for promoting various business ventures.</p>
+            </li>
+          </ul>
+        </div>
       </AnimatedElement>
     </div>
   );
