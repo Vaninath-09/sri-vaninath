@@ -133,7 +133,7 @@ function Home() {
                   Contact Me
                 </a>
                 {/* Replacing the Contact page link with a direct email link */}
-                <a href="mailto:vaninath935@gmail.com" className="btn secondary-btn">Email Me</a>
+                {/* <a href="mailto:vaninath935@gmail.com" className="btn secondary-btn">Email Me</a> */}
               </div>
             </div>
           </section>

@@ -23,7 +23,7 @@ function Resume() {
             </svg>
             Download Resume PDF
           </a>
-          <a 
+          {/* <a 
             href={resumePDF}
             className="btn secondary-btn resume-btn"
             target="_blank" 
@@ -34,7 +34,7 @@ function Resume() {
               <path d="M4.5 6.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 2A.5.5 0 0 1 5 8h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 2A.5.5 0 0 1 5 10h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/>
             </svg>
             View Resume Online
-          </a>
+          </a> */}
         </div>
       </AnimatedElement>
       
