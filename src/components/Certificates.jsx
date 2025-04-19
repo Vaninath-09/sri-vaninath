@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AnimatedElement from './AnimatedElement';
 // Import certificate images
 import macroeconomicsImg from '../assets/macroeconomics.png';
@@ -7,6 +7,10 @@ import pythonImg from '../assets/google python.png';
 import writingImg from '../assets/writinf and editing.png';
 
 function Certificates() {
+  // State for image preview modal
+  const [previewImage, setPreviewImage] = useState(null);
+  const [showPreview, setShowPreview] = useState(false);
+  
   // Updated certificates data
   const certificates = [
     {
@@ -48,6 +52,20 @@ function Certificates() {
     e.target.onerror = null; // Prevent infinite callbacks
     e.target.src = `https://via.placeholder.com/300x200?text=${e.target.alt.replace(/\s+/g, '+')}`;
   };
+  
+  // Function to open image preview
+  const openImagePreview = (imageSrc) => {
+    setPreviewImage(imageSrc);
+    setShowPreview(true);
+    // Prevent body scrolling when modal is open
+    document.body.style.overflow = 'hidden';
+  };
+  
+  // Function to close image preview
+  const closeImagePreview = () => {
+    setShowPreview(false);
+    document.body.style.overflow = 'auto';
+  };
 
   return (
     <div className="certificates-container section-padding">
@@ -66,12 +84,23 @@ function Certificates() {
             >
               <h3 className="card-title">{certificate.title}</h3>
               <div className="card-content">
-                <div className="certificate-image" style={{ border: '1px solid var(--card-border)', borderRadius: '6px' }}>
+                <div 
+                  className="certificate-image" 
+                  style={{ border: '1px solid var(--card-border)', borderRadius: '6px', cursor: 'pointer' }}
+                  onClick={() => openImagePreview(certificate.image)}
+                  title="Click to enlarge"
+                >
                   <img 
                     src={certificate.image} 
                     alt={certificate.title} 
                     onError={handleImageError}
-                    style={{ display: 'block', width: '100%', height: 'auto' }}
+                    style={{ 
+                      display: 'block', 
+                      width: '100%', 
+                      height: '200px', 
+                      objectFit: 'cover',
+                      transition: 'transform 0.3s ease'
+                    }}
                   />
                 </div>
                 <div className="certificate-details" style={{ padding: '10px 5px' }}>
@@ -93,6 +122,59 @@ function Certificates() {
           ))}
         </div>
       </AnimatedElement>
+      
+      {/* Image Preview Modal */}
+      {showPreview && (
+        <div 
+          className="image-preview-modal"
+          onClick={closeImagePreview}
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: 'rgba(0, 0, 0, 0.85)',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            zIndex: 1000,
+            padding: '20px',
+            cursor: 'zoom-out',
+          }}
+        >
+          <div className="modal-content" onClick={e => e.stopPropagation()}>
+            <img 
+              src={previewImage} 
+              alt="Certificate Preview" 
+              style={{
+                maxWidth: '90%',
+                maxHeight: '90vh',
+                objectFit: 'contain',
+                border: '2px solid white',
+                borderRadius: '4px',
+                boxShadow: '0 5px 15px rgba(0,0,0,0.5)',
+              }}
+            />
+            <button 
+              onClick={closeImagePreview}
+              style={{
+                position: 'absolute',
+                top: '20px',
+                right: '20px',
+                background: 'transparent',
+                border: 'none',
+                color: 'white',
+                fontSize: '24px',
+                cursor: 'pointer',
+              }}
+              aria-label="Close preview"
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
       
       <div className="section-divider"></div>
       
