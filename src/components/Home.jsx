@@ -49,7 +49,7 @@ function Home() {
         <AnimatedElement animation="slide-in">
           <section className="about-section">
             <div className="card about-card">
-              <div className="about-grid">
+              <div className="about-grid mobile-friendly">
                 <div className="about-text">
                   <p className="about-intro">
                     Currently pursuing BBA in Digital Technologies at Mahindra University, blending academic knowledge with hands-on business experiences. 

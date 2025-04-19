@@ -1975,3 +1975,44 @@ button:active {
     background: linear-gradient(135deg, rgba(18, 18, 18, 0.95), rgba(45, 45, 45, 0.8));
   }
 }
+
+/* Add these styles to make the about section mobile-responsive */
+.about-grid.mobile-friendly {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .about-grid.mobile-friendly {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 3rem;
+    align-items: start;
+  }
+}
+
+/* Adjust about section text alignment on mobile */
+@media (max-width: 767px) {
+  .about-text {
+    text-align: center;
+  }
+  
+  .about-intro {
+    border-left: none;
+    border-bottom: 3px solid var(--primary-accent);
+    padding: 0 0 1rem 0;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-skills {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+  }
+  
+  .skill-list {
+    padding: 0;
+    margin: 0 auto;
+    max-width: 80%;
+  }
+}
