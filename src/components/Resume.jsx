@@ -11,18 +11,27 @@ function Resume() {
         <a 
           href={resumePDF} 
           download="V_Sri_Vaninath_Resume.pdf"
-          className="btn primary-btn"
+          className="btn primary-btn resume-btn"
           target="_blank" 
           rel="noopener noreferrer"
         >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+          </svg>
           Download Resume PDF
         </a>
-        <button 
-          className="btn secondary-btn"
-          onClick={() => window.open(resumePDF, '_blank')}
+        <a 
+          href={resumePDF}
+          className="btn secondary-btn resume-btn"
+          target="_blank" 
+          rel="noopener noreferrer"
         >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path fillRule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+          </svg>
           View Resume Online
-        </button>
+        </a>
       </AnimatedElement>
       
       <AnimatedElement animation="slide-in" delay={100} className="resume-section card">

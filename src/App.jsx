@@ -70,39 +70,45 @@ function App() {
 
   return (
     <div className="portfolio">
-      <header className={`compact-header ${headerClass}`}>
-        <div className="logo">
-          <h2>V SRI VANINATH</h2>
+      <header className={`main-header ${headerClass}`}>
+        <div className="header-container">
+          <div className="logo">
+            <NavLink to="/">
+              <h2>V SRI VANINATH</h2>
+            </NavLink>
+          </div>
+          <button 
+            className="menu-toggle" 
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            <span className="menu-icon">{menuOpen ? '✕' : '☰'}</span>
+          </button>
+          <nav className={menuOpen ? 'active' : ''}>
+            <div className="nav-links">
+              <NavLink to="/" 
+                className={({ isActive }) => isActive ? 'active' : ''}>
+                Home
+              </NavLink>
+              <NavLink to="/resume" 
+                className={({ isActive }) => isActive ? 'active' : ''}>
+                Resume
+              </NavLink>
+              <NavLink to="/certificates" 
+                className={({ isActive }) => isActive ? 'active' : ''}>
+                Certificates
+              </NavLink>
+              <NavLink to="/projects" 
+                className={({ isActive }) => isActive ? 'active' : ''}>
+                Projects
+              </NavLink>
+              <NavLink to="/extracurricular" 
+                className={({ isActive }) => isActive ? 'active' : ''}>
+                Extracurricular
+              </NavLink>
+            </div>
+          </nav>
         </div>
-        <button 
-          className="menu-toggle" 
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-        >
-          {menuOpen ? '✕' : '☰'}
-        </button>
-        <nav className={menuOpen ? 'active' : ''}>
-          <NavLink to="/" 
-            className={({ isActive }) => isActive ? 'active' : ''}>
-            Home
-          </NavLink>
-          <NavLink to="/resume" 
-            className={({ isActive }) => isActive ? 'active' : ''}>
-            Resume
-          </NavLink>
-          <NavLink to="/certificates" 
-            className={({ isActive }) => isActive ? 'active' : ''}>
-            Certificates
-          </NavLink>
-          <NavLink to="/projects" 
-            className={({ isActive }) => isActive ? 'active' : ''}>
-            Projects
-          </NavLink>
-          <NavLink to="/extracurricular" 
-            className={({ isActive }) => isActive ? 'active' : ''}>
-            Extracurricular
-          </NavLink>
-        </nav>
         <div 
           className={`backdrop ${menuOpen ? 'active' : ''}`} 
           onClick={() => setMenuOpen(false)}
