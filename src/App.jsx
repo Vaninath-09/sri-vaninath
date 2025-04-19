@@ -70,7 +70,7 @@ function App() {
 
   return (
     <div className="portfolio">
-      <header className={headerClass}>
+      <header className={`compact-header ${headerClass}`}>
         <div className="logo">
           <h2>V SRI VANINATH</h2>
         </div>

@@ -38,22 +38,62 @@ function Resume() {
       
       <AnimatedElement animation="slide-in" delay={200} className="resume-section card">
         <h2>Education</h2>
-        <div className="education-item">
-          <h3>Mahindra University, Bahadurpally</h3>
-          <p className="education-program">BBA - Digital Technologies (3rd Year)</p>
-          <p className="education-year">2022 - 2025</p>
+        <div className="education-item" style={{ 
+          display: 'flex', 
+          flexDirection: 'column', 
+          border: '1px solid var(--card-border)', 
+          borderRadius: '8px', 
+          padding: '16px', 
+          backgroundColor: 'var(--card-bg)', 
+          marginBottom: '12px', 
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' 
+        }}>
+          <h3 style={{ marginBottom: '8px', color: 'var(--primary-accent)' }}>Mahindra University, Bahadurpally</h3>
+          <p className="education-program" style={{ marginBottom: '4px', fontWeight: '500' }}>
+            BBA - Digital Technologies (3rd Year) <br />
+            Specialization: Business Technology Integration <br />
+            Relevant Coursework: Digital Marketing, Financial Management, Market Analytics <br />
+            Achievements: Dean's List (2023), Best Project Award (2022)
+          </p>
+          <p className="education-year" style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>2022 - 2025</p>
         </div>
         
-        <div className="education-item">
-          <h3>Gatik Junior College, Tarnaka</h3>
-          <p className="education-program">Intermediate (MPC)</p>
-          <p className="education-year">2020 - 2022</p>
+        <div className="education-item" style={{ 
+          display: 'flex', 
+          flexDirection: 'column', 
+          border: '1px solid var(--card-border)', 
+          borderRadius: '8px', 
+          padding: '16px', 
+          backgroundColor: 'var(--card-bg)', 
+          marginBottom: '12px', 
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' 
+        }}>
+          <h3 style={{ marginBottom: '8px', color: 'var(--primary-accent)' }}>Gatik Junior College, Tarnaka</h3>
+          <p className="education-program" style={{ marginBottom: '4px', fontWeight: '500' }}>
+            Intermediate (MPC) <br />
+            Focus: Mathematics, Physics, Chemistry <br />
+            Achievements: Top 5% in State Board Exams
+          </p>
+          <p className="education-year" style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>2020 - 2022</p>
         </div>
         
-        <div className="education-item">
-          <h3>Zee High School, Hayathnagar</h3>
-          <p className="education-program">High School</p>
-          <p className="education-year">Completed: 2020</p>
+        <div className="education-item" style={{ 
+          display: 'flex', 
+          flexDirection: 'column', 
+          border: '1px solid var(--card-border)', 
+          borderRadius: '8px', 
+          padding: '16px', 
+          backgroundColor: 'var(--card-bg)', 
+          marginBottom: '12px', 
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' 
+        }}>
+          <h3 style={{ marginBottom: '8px', color: 'var(--primary-accent)' }}>Zee High School, Hayathnagar</h3>
+          <p className="education-program" style={{ marginBottom: '4px', fontWeight: '500' }}>
+            High School <br />
+            Focus: Science and Mathematics <br />
+            Achievements: School Topper, Science Fair Winner
+          </p>
+          <p className="education-year" style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Completed: 2020</p>
         </div>
       </AnimatedElement>
       
