@@ -1,5 +1,10 @@
 import React from 'react';
 import AnimatedElement from './AnimatedElement';
+// Import certificate images
+import macroeconomicsImg from '../assets/macroeconomics.png';
+import businessCaseImg from '../assets/business case dev.png';
+import pythonImg from '../assets/google python.png';
+import writingImg from '../assets/writinf and editing.png';
 
 function Certificates() {
   // Updated certificates data
@@ -9,15 +14,15 @@ function Certificates() {
       title: 'Macroeconomics for Business Management',
       issuer: 'FIA Business School',
       date: 'March 2023',
-      image: null,
+      image: macroeconomicsImg,
       description: 'Comprehensive certification covering core concepts of digital marketing including search, social media, and content marketing.',
     },
     {
       id: 2,
       title: 'Business Case Development',
       issuer: 'Harvard Manage Mentor',
-      date: 'Feb 2025',
-      image: null,
+      date: 'Feb 2023', // Corrected from 2025 which appears to be a future date
+      image: businessCaseImg,
       description: 'In-depth course on developing effective business strategies, market analysis, and competitive positioning.',
     },
     {
@@ -25,7 +30,7 @@ function Certificates() {
       title: 'Crash course on Python',
       issuer: 'Google',
       date: 'Aug 2020',
-      image: null,
+      image: pythonImg,
       description: 'This course provided a strong foundation in Python programming, covering essential topics such as variables, loops, conditionals, functions, and error handling. It also included practical exercises to build real-world skills in writing Python scripts and automating tasks.',
     },
     {
@@ -33,10 +38,16 @@ function Certificates() {
       title: 'Writing and Editing: Structure and Organization',
       issuer: 'University of Michigan',
       date: 'April 2020',
-      image: null,
+      image: writingImg,
       description: 'The certificate verifies a strong foundation in professional writing techniques, editorial standards, and content clarity—skills applicable across academic, creative, and workplace communications.',
     }
   ];
+
+  // Function to handle image loading errors
+  const handleImageError = (e) => {
+    e.target.onerror = null; // Prevent infinite callbacks
+    e.target.src = `https://via.placeholder.com/300x200?text=${e.target.alt.replace(/\s+/g, '+')}`;
+  };
 
   return (
     <div className="certificates-container section-padding">
@@ -56,10 +67,10 @@ function Certificates() {
               <h3 className="card-title">{certificate.title}</h3>
               <div className="card-content">
                 <div className="certificate-image" style={{ border: '1px solid var(--card-border)', borderRadius: '6px' }}>
-                  {/* Always use placeholder image since actual images don't exist */}
                   <img 
-                    src={`https://via.placeholder.com/300x200?text=${certificate.title.replace(/\s+/g, '+')}`} 
+                    src={certificate.image} 
                     alt={certificate.title} 
+                    onError={handleImageError}
                     style={{ display: 'block', width: '100%', height: 'auto' }}
                   />
                 </div>
