@@ -12,6 +12,15 @@
       const segments = window.location.pathname.split('/');
       const isGitHubPages = window.location.hostname.includes('github.io');
       
+      // Check for known missing pages
+      const path = window.location.pathname;
+      if (path.includes('/contact')) {
+        // Redirect to homepage if trying to access non-existent contact page
+        const homeUrl = window.location.origin + (isGitHubPages ? '/' + repo : '');
+        window.location.replace(homeUrl);
+        return;
+      }
+      
       // Remove the repo name from the pathname if we're on GitHub Pages
       let pathname = window.location.pathname;
       if (isGitHubPages && segments.length > 1 && segments[1] === repo) {
