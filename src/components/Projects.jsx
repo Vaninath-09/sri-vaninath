@@ -11,7 +11,7 @@ function Projects() {
       duration: "2023",
       description: "Conducted a comprehensive analysis comparing the influence of fiscal, monetary, and trade policies on the horticulture sectors in Brazil and China, providing insights into economic policy impacts.",
       technologies: ["Economic Analysis", "Policy Research", "International Trade"],
-      file: "././assets/Comparative Analysis of Fiscal, Monetary, and Trade Policies in the Horticulture Sector.pdf"
+      imageUrl: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ function Projects() {
       duration: "2022 - 2023",
       description: "Developed a predictive model to identify high-risk order cancellations for Amazon sales, enabling proactive pricing strategies and improved revenue management.",
       technologies: ["Data Analysis", "Predictive Modeling", "E-commerce Strategy"],
-      file: "././assets/mareketing_anayatis_final project_ 000.pdf"
+      imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
     },
     {
       id: 3,
@@ -29,7 +29,7 @@ function Projects() {
       duration: "2022",
       description: "Engineered a wearable device that monitors and tracks seizure patterns in epilepsy patients, providing critical data for healthcare providers to optimize treatment plans and improve patient outcomes.",
       technologies: ["IoT Development", "Health Monitoring", "Embedded Systems"],
-      file: "././assets/Team connectivity_final presentation.pptx"
+      imageUrl: "https://images.unsplash.com/photo-1576669801775-ff43c5ab079d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
     },
     {
       id: 4,
@@ -38,7 +38,7 @@ function Projects() {
       duration: "2021 - 2022",
       description: "Transformed a home-based bakery business from manual Instagram/WhatsApp operations to a full e-commerce platform, streamlining the ordering process and enabling business scaling.",
       technologies: ["E-commerce Development", "UX Design", "Digital Marketing"],
-      file: "././assets/Project Background.pdf"
+      imageUrl: "https://images.unsplash.com/photo-1603532648955-039310d9ed75?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
     }
   ];
 
@@ -57,7 +57,7 @@ function Projects() {
             >
               <div className="project-image">
                 <img 
-                  src={`https://via.placeholder.com/400x250?text=${project.title.replace(/\s+/g, '+')}`}
+                  src={project.imageUrl}
                   alt={project.title} 
                 />
               </div>
