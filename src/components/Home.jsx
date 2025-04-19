@@ -86,7 +86,7 @@ function Home() {
         </AnimatedElement>
         
         <section className="highlights">
-          <div className="highlights-grid animated-gradient-bg">
+          <div className="highlights-grid secondart-gradient-bg">
             <AnimatedElement animation="fade-in" delay={100} className="highlight-card card">
               <div className="highlight-icon">🎓</div>
               <h3>Education</h3>

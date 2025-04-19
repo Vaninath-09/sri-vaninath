@@ -3,16 +3,16 @@
   line-height: 1.5;
   font-weight: 400;
 
-  /* New color palette */
-  --primary-bg: #F2EFE7;
-  --secondary-bg: #E5E2DA;
-  --primary-accent: #48A6A7;
-  --secondary-accent: #9ACBD0;
+  /* New green color palette */
+  --primary-bg: #F8F9F6;
+  --secondary-bg: #EAEFEA;
+  --primary-accent: #4CAF50;
+  --secondary-accent: #8BC34A;
   --text-dark: #333333;
   --text-muted: #666666;
   --card-bg: #FFFFFF;
   --card-border: #E0E0E0;
-  --dark-accent: #006A71;
+  --dark-accent: #2E7D32;
 
   /* Animation variables */
   --transition-speed: 0.3s;
@@ -83,14 +83,14 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: rgba(72, 166, 167, 0.1);
+  background-color: rgba(76, 175, 80, 0.1);
   color: var(--text-dark);
   cursor: pointer;
   transition: background-color 0.25s, transform 0.25s;
 }
 
 button:hover {
-  background-color: rgba(72, 166, 167, 0.2);
+  background-color: rgba(76, 175, 80, 0.2);
   transform: translateY(-2px);
 }
 
@@ -147,19 +147,19 @@ button:focus-visible {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary-bg: #1a1a1a;
-    --secondary-bg: #2d2d2d;
-    --card-bg: #2d2d2d;
-    --card-border: #444444;
-    --text-dark: #e0e0e0;
-    --text-muted: #9e9e9e;
+    --primary-bg: #F8F9F6;
+    --secondary-bg: #EAEFEA;
+    --card-bg: #FFFFFF;
+    --card-border: #E0E0E0;
+    --text-dark: #333333;
+    --text-muted: #666666;
     color: var(--text-dark);
     background-color: var(--primary-bg);
   }
   a:hover {
-    color: #9ACBD0;
+    color: #2E7D32;
   }
   button {
-    background-color: rgba(72, 166, 167, 0.2);
+    background-color: rgba(76, 175, 80, 0.2);
   }
 }

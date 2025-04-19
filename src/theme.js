@@ -5,11 +5,11 @@
 
 export const COLORS = {
   // Primary colors
-  PRIMARY_BG: '#F2EFE7',         // Light cream/off-white - Background
-  SECONDARY_BG: '#E5E2DA',       // Slightly darker cream - Secondary background
-  PRIMARY_ACCENT: '#48A6A7',     // Medium teal - Primary accent
-  SECONDARY_ACCENT: '#9ACBD0',   // Light blue/teal - Secondary accent
-  DARK_ACCENT: '#006A71',        // Dark teal - For headings and emphasis
+  PRIMARY_BG: '#F8F9F6',         // Light cream/off-white - Background
+  SECONDARY_BG: '#EAEFEA',       // Slightly darker cream - Secondary background
+  PRIMARY_ACCENT: '#4CAF50',     // Medium green - Primary accent
+  SECONDARY_ACCENT: '#8BC34A',   // Light green - Secondary accent
+  DARK_ACCENT: '#2E7D32',        // Dark green - For headings and emphasis
   
   // Text colors  
   TEXT_DARK: '#333333',          // Dark gray - Primary text
@@ -26,9 +26,9 @@ export const COLORS = {
   INFO: '#2196F3',               // Blue - Info messages
   
   // Gradients
-  PRIMARY_GRADIENT: 'linear-gradient(45deg, #48A6A7, #006A71)',
-  SECONDARY_GRADIENT: 'linear-gradient(45deg, #9ACBD0, #48A6A7)',
-  BACKGROUND_GRADIENT: 'linear-gradient(135deg, rgba(242, 239, 231, 0.95), rgba(229, 226, 218, 0.8))',
+  PRIMARY_GRADIENT: 'linear-gradient(45deg, #4CAF50, #2E7D32)',
+  SECONDARY_GRADIENT: 'linear-gradient(45deg, #8BC34A, #4CAF50)',
+  BACKGROUND_GRADIENT: 'linear-gradient(135deg, rgba(248, 249, 246, 0.95), rgba(234, 239, 234, 0.8))',
 };
 
 export const SHADOWS = {

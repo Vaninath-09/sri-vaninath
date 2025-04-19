@@ -9,6 +9,7 @@ import Certificates from './components/Certificates'
 import Projects from './components/Projects'
 import Extracurricular from './components/Extracurricular'
 import ScrollToTop from './components/ScrollToTop'
+import ThemeProvider from './components/ThemeProvider'
 
 function App() {
   const [activeNav, setActiveNav] = useState('home')
@@ -70,72 +71,74 @@ function App() {
   }
 
   return (
-    <div className="portfolio">
-      <ScrollToTop />
-      <header className={`main-header ${headerClass}`}>
-        <div className="header-container">
-          <div className="logo">
-            <NavLink to="/">
-              <h2>V SRI VANINATH</h2>
-            </NavLink>
-          </div>
-          <button 
-            className="menu-toggle" 
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-          >
-            <span className="menu-icon">{menuOpen ? '✕' : '☰'}</span>
-          </button>
-          <nav className={menuOpen ? 'active' : ''}>
-            <div className="nav-links">
-              <NavLink to="/" 
-                className={({ isActive }) => isActive ? 'active' : ''}>
-                Home
-              </NavLink>
-              <NavLink to="/resume" 
-                className={({ isActive }) => isActive ? 'active' : ''}>
-                Resume
-              </NavLink>
-              <NavLink to="/certificates" 
-                className={({ isActive }) => isActive ? 'active' : ''}>
-                Certificates
-              </NavLink>
-              <NavLink to="/projects" 
-                className={({ isActive }) => isActive ? 'active' : ''}>
-                Projects
-              </NavLink>
-              <NavLink to="/extracurricular" 
-                className={({ isActive }) => isActive ? 'active' : ''}>
-                Extracurricular
+    <ThemeProvider>
+      <div className="portfolio">
+        <ScrollToTop />
+        <header className={`main-header ${headerClass}`}>
+          <div className="header-container">
+            <div className="logo">
+              <NavLink to="/">
+                <h2>V SRI VANINATH</h2>
               </NavLink>
             </div>
-          </nav>
-        </div>
-        <div 
-          className={`backdrop ${menuOpen ? 'active' : ''}`} 
-          onClick={() => setMenuOpen(false)}
-        ></div>
-      </header>
+            <button 
+              className="menu-toggle" 
+              onClick={toggleMenu}
+              aria-label="Toggle menu"
+            >
+              <span className="menu-icon">{menuOpen ? '✕' : '☰'}</span>
+            </button>
+            <nav className={menuOpen ? 'active' : ''}>
+              <div className="nav-links">
+                <NavLink to="/" 
+                  className={({ isActive }) => isActive ? 'active' : ''}>
+                  Home
+                </NavLink>
+                <NavLink to="/resume" 
+                  className={({ isActive }) => isActive ? 'active' : ''}>
+                  Resume
+                </NavLink>
+                <NavLink to="/certificates" 
+                  className={({ isActive }) => isActive ? 'active' : ''}>
+                  Certificates
+                </NavLink>
+                <NavLink to="/projects" 
+                  className={({ isActive }) => isActive ? 'active' : ''}>
+                  Projects
+                </NavLink>
+                <NavLink to="/extracurricular" 
+                  className={({ isActive }) => isActive ? 'active' : ''}>
+                  Extracurricular
+                </NavLink>
+              </div>
+            </nav>
+          </div>
+          <div 
+            className={`backdrop ${menuOpen ? 'active' : ''}`} 
+            onClick={() => setMenuOpen(false)}
+          ></div>
+        </header>
 
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="/certificates" element={<Certificates />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/extracurricular" element={<Extracurricular />} />
-        </Routes>
-      </main>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="/certificates" element={<Certificates />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/extracurricular" element={<Extracurricular />} />
+          </Routes>
+        </main>
 
-      <footer>
-        <div className="contact">
-          <p>Hyderabad, Telangana | +91 82470 25014 | <a href="mailto:vaninath935@gmail.com">vaninath935@gmail.com</a></p>
-        </div>
-        <div className="copyright">
-          <p>&copy; {new Date().getFullYear()} V Sri Vaninath. All Rights Reserved.</p>
-        </div>
-      </footer>
-    </div>
+        <footer>
+          <div className="contact">
+            <p>Hyderabad, Telangana | +91 82470 25014 | <a href="mailto:vaninath935@gmail.com">vaninath935@gmail.com</a></p>
+          </div>
+          <div className="copyright">
+            <p>&copy; {new Date().getFullYear()} V Sri Vaninath. All Rights Reserved.</p>
+          </div>
+        </footer>
+      </div>
+    </ThemeProvider>
   )
 }
 
