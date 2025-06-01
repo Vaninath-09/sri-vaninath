@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/sri-vaninath/',
-  assetsInclude: ['**/*.pdf', '**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.svg'], // Ensure all assets are included
+  assetsInclude: ['**/*.pdf', '**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.svg', '**/*.mp4'], // Ensure all assets are included
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
@@ -24,6 +24,9 @@ export default defineConfig({
           }
           if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
             return `assets/images/[name]-[hash][extname]`;
+          }
+          if (/mp4|webm|ogg|mov/i.test(ext)) {
+            return `assets/videos/[name]-[hash][extname]`;
           }
           return `assets/[name]-[hash][extname]`;
         },

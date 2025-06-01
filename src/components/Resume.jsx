@@ -1,6 +1,7 @@
 import React from 'react';
 import resumePDF from '../assets/V_Sri_Vaninath_Resume 2.pdf';
 import internshipLetterPDF from '../assets/Internship Service Letter - V Sri Vaninath.pdf';
+import introVideo from '../assets/intro_video.mp4';
 import AnimatedElement from './AnimatedElement';
 
 function Resume() {
@@ -35,6 +36,42 @@ function Resume() {
             </svg>
             View Resume Online
           </a> */}
+        </div>
+      </AnimatedElement>
+
+      <AnimatedElement animation="slide-in" className="resume-section card">
+        <h2>Personal Introduction</h2>
+        <div className="video-container" style={{ 
+            display: 'flex', 
+            flexDirection: 'column', 
+            alignItems: 'center', 
+            marginBottom: '20px' 
+        }}>
+          <p style={{ marginBottom: '15px', textAlign: 'center' }}>
+            Watch my brief introduction video to learn more about my skills and experiences.
+          </p>
+          <div style={{ 
+              width: '100%', 
+              maxWidth: '800px', 
+              borderRadius: '8px', 
+              overflow: 'hidden',
+              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
+          }}>
+            <video 
+              controls 
+              preload="metadata"
+              poster={`${introVideo}#t=0.5`} // Show thumbnail from 0.5 second mark
+              style={{ 
+                width: '100%', 
+                maxHeight: '450px', 
+                objectFit: 'cover',
+                backgroundColor: '#000'
+              }}
+            >
+              <source src={introVideo} type="video/mp4" />
+              Your browser does not support the video tag. You can <a href={introVideo} download>download the video</a> instead.
+            </video>
+          </div>
         </div>
       </AnimatedElement>
       

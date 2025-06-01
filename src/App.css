@@ -1381,17 +1381,6 @@ button:active {
   font-weight: 500;
 }
 
-.resume-section.professional-layout .education-program {
-  font-size: 1rem;
-  color: var(--text-dark);
-  line-height: 1.6;
-}
-
-.resume-section.professional-layout .education-year {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-
 /* New styles for professional project layout */
 .project-card.professional-project-layout {
   display: flex;
@@ -2156,5 +2145,42 @@ button:active {
     padding: 0;
     margin: 0 auto;
     max-width: 80%;
+  }
+}
+
+/* Video container styles for introduction video in Resume page */
+.video-container {
+  margin: 1rem 0 2rem;
+  width: 100%;
+  position: relative;
+}
+
+.video-container video {
+  border-radius: 8px;
+  width: 100%;
+  background-color: #000;
+  transition: box-shadow var(--transition-speed) var(--transition-function);
+}
+
+.video-container video:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.video-container p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* Media queries for responsive video */
+@media (max-width: 768px) {
+  .video-container {
+    margin-bottom: 1.5rem;
+  }
+  
+  .video-container video {
+    max-height: 300px;
   }
 }
